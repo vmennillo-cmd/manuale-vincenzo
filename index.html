@@ -1,262 +1,158 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<!doctype html>
+<html lang="it">
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Manuale Vincenzo</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <style>
-:root{--bg:#f7f5f0;--paper:#fff;--ink:#1d1d1f;--muted:#666;--line:#e6e2da;--accent:#3d3d3d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;line-height:1.62;font-size:16px}.wrap{max-width:940px;margin:0 auto;padding:24px 16px 72px}.top{position:sticky;top:0;background:rgba(247,245,240,.96);backdrop-filter:blur(8px);padding:10px 16px;border-bottom:1px solid var(--line);z-index:5}.top a{color:var(--ink);text-decoration:none;font-weight:600}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:18px 0;box-shadow:0 10px 25px rgba(0,0,0,.04)}h1{font-size:2rem;line-height:1.15;margin:12px 0 20px}h2{font-size:1.55rem;margin-top:42px;border-top:1px solid var(--line);padding-top:28px}h3{font-size:1.18rem;margin-top:28px}h4{font-size:1rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto;background:#fff;border-radius:12px}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}th{background:#f1eee8}blockquote{border-left:4px solid var(--accent);padding:12px 16px;margin:18px 0;background:#f3f0e9;border-radius:10px}code{background:#eee;padding:.1em .35em;border-radius:6px}.toc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin:20px 0}.toc a{display:block;color:var(--ink);text-decoration:none;padding:6px 0;border-bottom:1px solid #f1eee8}.toc a:last-child{border-bottom:0}ul,ol{padding-left:1.3em}@media(max-width:600px){body{font-size:15px}.wrap{padding:16px 12px 56px}.card{padding:18px;border-radius:14px}h1{font-size:1.6rem}h2{font-size:1.25rem}table{font-size:13px}th,td{padding:8px}}
-
+<meta name="theme-color" content="#111827">
+<title>Manuale Vincenzo | Allenamento, Spalla, Nutrizione</title>
+<style>
+:root {
+  --bg:#f7f4ef; --surface:#ffffff; --surface2:#f1eee8; --text:#171717; --muted:#6b665f;
+  --line:#ded8ce; --accent:#111827; --accent2:#8a7a63; --ok:#166534; --warn:#92400e; --bad:#991b1b;
+  --shadow:0 18px 45px rgba(17,24,39,.08); --radius:22px; --max:1120px;
+}
+[data-theme="dark"] {
+  --bg:#0c0d0f; --surface:#15171a; --surface2:#1e2126; --text:#f4f1ea; --muted:#aaa39a;
+  --line:#2f333a; --accent:#f5f1e8; --accent2:#c7b89a; --shadow:0 18px 50px rgba(0,0,0,.35);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; line-height:1.55; }
+a { color:inherit; text-decoration-color:var(--accent2); text-underline-offset:3px; }
+button,input,textarea,select { font:inherit; }
+.app { min-height:100vh; }
+.topbar { position:sticky; top:0; z-index:30; backdrop-filter:blur(14px); background:color-mix(in srgb, var(--bg) 84%, transparent); border-bottom:1px solid var(--line); }
+.topbar-inner { max-width:var(--max); margin:0 auto; padding:12px 18px; display:flex; align-items:center; gap:12px; }
+.brand { display:flex; align-items:center; gap:10px; min-width:0; }
+.logo { width:40px; height:40px; border-radius:14px; display:grid; place-items:center; background:var(--accent); color:var(--bg); font-weight:900; }
+.brand-title { font-weight:800; letter-spacing:-.03em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.brand-sub { font-size:12px; color:var(--muted); margin-top:-3px; }
+.icon-btn { border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:14px; padding:10px 12px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,.04); }
+.icon-btn:hover { transform:translateY(-1px); }
+.search-wrap { flex:1; min-width:120px; position:relative; }
+#search { width:100%; border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:14px; padding:11px 42px 11px 14px; outline:none; }
+.search-kbd { position:absolute; right:10px; top:50%; transform:translateY(-50%); font-size:11px; border:1px solid var(--line); color:var(--muted); padding:2px 6px; border-radius:6px; }
+.layout { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:280px minmax(0,1fr); gap:24px; padding:22px 18px 80px; }
+.sidebar { position:sticky; top:78px; align-self:start; max-height:calc(100vh - 96px); overflow:auto; padding:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); }
+.sidebar h3 { margin:0 0 12px; font-size:14px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.toc a { display:block; padding:8px 10px; border-radius:12px; color:var(--muted); font-size:14px; text-decoration:none; }
+.toc a:hover, .toc a.active { background:var(--surface2); color:var(--text); }
+.toc .h3 { padding-left:22px; font-size:13px; }
+.side-actions { display:grid; gap:8px; margin-top:14px; }
+.content { min-width:0; }
+.hero { border:1px solid var(--line); background:linear-gradient(135deg, var(--surface), var(--surface2)); border-radius:30px; padding:26px; box-shadow:var(--shadow); margin-bottom:22px; }
+.hero h1 { margin:0; font-size:clamp(30px,5vw,56px); line-height:.98; letter-spacing:-.06em; }
+.hero p { color:var(--muted); max-width:720px; margin:14px 0 0; }
+.hero-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:20px; }
+.metric { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:14px; }
+.metric b { display:block; font-size:19px; }
+.metric span { font-size:12px; color:var(--muted); }
+.quick { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:22px; }
+.card { border:1px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+.card h3 { margin:0 0 8px; }
+.card p { margin:0; color:var(--muted); }
+.content article { border:1px solid var(--line); background:var(--surface); border-radius:28px; padding:28px; box-shadow:var(--shadow); }
+.content h1:first-child { display:none; }
+.content h2 { margin-top:40px; padding-top:20px; border-top:1px solid var(--line); font-size:clamp(24px,4vw,34px); letter-spacing:-.04em; }
+.content h2:first-of-type { margin-top:0; border-top:0; padding-top:0; }
+.content h3 { margin-top:28px; font-size:22px; letter-spacing:-.02em; }
+.content p, .content li { color:color-mix(in srgb, var(--text) 88%, var(--muted)); }
+blockquote { margin:20px 0; padding:16px 18px; border-left:4px solid var(--accent2); background:var(--surface2); border-radius:0 16px 16px 0; }
+table { width:100%; border-collapse:separate; border-spacing:0; margin:16px 0 22px; overflow:hidden; border:1px solid var(--line); border-radius:18px; display:block; max-width:100%; overflow-x:auto; }
+thead, tbody { min-width:700px; }
+th,td { padding:12px 14px; border-bottom:1px solid var(--line); vertical-align:top; min-width:120px; }
+th { background:var(--surface2); text-align:left; font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+tr:last-child td { border-bottom:0; }
+ul,ol { padding-left:1.25rem; }
+hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+.badge { display:inline-flex; align-items:center; gap:6px; padding:5px 10px; border:1px solid var(--line); border-radius:999px; color:var(--muted); background:var(--surface); font-size:12px; }
+.exercise-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:16px 0 24px; }
+.exercise { border:1px solid var(--line); background:var(--surface2); border-radius:20px; padding:14px; }
+.exercise b { display:block; margin-bottom:6px; }
+.exercise small { display:block; color:var(--muted); }
+.risk-low { color:var(--ok); } .risk-mid { color:var(--warn); } .risk-high { color:var(--bad); }
+.tracker-panel { margin:22px 0; border:1px dashed var(--accent2); background:var(--surface2); border-radius:24px; padding:18px; }
+.tracker-controls { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.tracker-table td input { width:100%; border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:10px; padding:8px; }
+.toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:var(--accent); color:var(--bg); padding:12px 16px; border-radius:999px; opacity:0; pointer-events:none; transition:.25s; z-index:80; }
+.toast.show { opacity:1; bottom:32px; }
+mark { background:#fde68a; color:#111827; padding:0 3px; border-radius:4px; }
+.no-results { display:none; border:1px solid var(--line); background:var(--surface); border-radius:20px; padding:18px; color:var(--muted); }
+@media (max-width: 920px) {
+  .layout { grid-template-columns:1fr; padding:14px 12px 60px; }
+  .sidebar { position:fixed; inset:70px 12px 12px; z-index:50; display:none; max-height:none; }
+  .sidebar.open { display:block; }
+  .hero { padding:22px; border-radius:24px; }
+  .hero-grid,.quick,.exercise-grid { grid-template-columns:1fr 1fr; }
+  .topbar-inner { padding:10px 12px; }
+  .brand-sub { display:none; }
+  .content article { padding:20px; border-radius:24px; }
+}
+@media (max-width: 560px) {
+  .hero-grid,.quick,.exercise-grid { grid-template-columns:1fr; }
+  .brand-title { max-width:160px; }
+  .topbar-inner { gap:8px; }
+  .icon-btn { padding:9px 10px; }
+}
+@media print { .topbar,.sidebar,.quick,.tracker-panel { display:none !important; } .layout { display:block; max-width:none; } body { background:#fff; } .content article { box-shadow:none; border:0; } }
 </style>
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">Manuale Vincenzo</h1>
-</header>
-<nav id="TOC" role="doc-toc">
-<ul>
-<li><a
-href="#manuale-professionale-di-allenamento-e-riabilitazione-per-vincenzo"
-id="toc-manuale-professionale-di-allenamento-e-riabilitazione-per-vincenzo">Manuale
-Professionale di Allenamento e Riabilitazione per Vincenzo</a>
-<ul>
-<li><a href="#introduzione" id="toc-introduzione">Introduzione</a></li>
-<li><a href="#capitolo-1-analisi-iniziale"
-id="toc-capitolo-1-analisi-iniziale">Capitolo 1 – Analisi iniziale</a>
-<ul>
-<li><a href="#profilo-del-soggetto"
-id="toc-profilo-del-soggetto">Profilo del soggetto</a></li>
-<li><a href="#punti-di-forza" id="toc-punti-di-forza">Punti di
-forza</a></li>
-<li><a href="#punti-deboli-e-criticità"
-id="toc-punti-deboli-e-criticità">Punti deboli e criticità</a></li>
-<li><a href="#kpi-indicatori-chiave-di-prestazione"
-id="toc-kpi-indicatori-chiave-di-prestazione">KPI (indicatori chiave di
-prestazione)</a></li>
-<li><a href="#timeline-annuale" id="toc-timeline-annuale">Timeline
-annuale</a></li>
-</ul></li>
-<li><a href="#capitolo-2-biomeccanica-della-spalla"
-id="toc-capitolo-2-biomeccanica-della-spalla">Capitolo 2 – Biomeccanica
-della spalla</a>
-<ul>
-<li><a href="#anatomia-funzionale-della-cuffia-dei-rotatori"
-id="toc-anatomia-funzionale-della-cuffia-dei-rotatori">Anatomia
-funzionale della cuffia dei rotatori</a></li>
-<li><a href="#scapolotoracica-e-ritmo-scapoloomerale"
-id="toc-scapolotoracica-e-ritmo-scapoloomerale">Scapolotoracica e ritmo
-scapolo‑omerale</a></li>
-<li><a href="#implicazioni-dellinfortunio-di-vincenzo"
-id="toc-implicazioni-dellinfortunio-di-vincenzo">Implicazioni
-dell’infortunio di Vincenzo</a></li>
-<li><a href="#esercizi-consigliati-e-perché"
-id="toc-esercizi-consigliati-e-perché">Esercizi consigliati e
-perché</a></li>
-<li><a href="#esercizi-da-limitare-e-vietati"
-id="toc-esercizi-da-limitare-e-vietati">Esercizi da limitare e
-vietati</a></li>
-<li><a href="#evidenze-su-esercizi-specifici"
-id="toc-evidenze-su-esercizi-specifici">Evidenze su esercizi
-specifici</a></li>
-</ul></li>
-<li><a href="#capitolo-3-programmazione-annuale"
-id="toc-capitolo-3-programmazione-annuale">Capitolo 3 – Programmazione
-annuale</a>
-<ul>
-<li><a href="#principi-generali" id="toc-principi-generali">Principi
-generali</a></li>
-<li><a href="#struttura-dei-macro-meso-e-microcicli"
-id="toc-struttura-dei-macro-meso-e-microcicli">Struttura dei macro‑,
-meso‑ e micro‑cicli</a></li>
-<li><a href="#settimane-di-scarico-e-test"
-id="toc-settimane-di-scarico-e-test">Settimane di scarico e
-test</a></li>
-</ul></li>
-<li><a href="#capitolo-4-scheda-palestra-4-giorni"
-id="toc-capitolo-4-scheda-palestra-4-giorni">Capitolo 4 – Scheda
-palestra (4 giorni)</a>
-<ul>
-<li><a href="#struttura-generale" id="toc-struttura-generale">Struttura
-generale</a></li>
-<li><a href="#sessione-a-spinta-torace-spalle-tricipiti"
-id="toc-sessione-a-spinta-torace-spalle-tricipiti">Sessione A – Spinta
-(torace, spalle, tricipiti)</a></li>
-<li><a href="#sessione-b-gambe-core"
-id="toc-sessione-b-gambe-core">Sessione B – Gambe &amp; core</a></li>
-<li><a href="#sessione-c-trazione-schiena-bicipiti"
-id="toc-sessione-c-trazione-schiena-bicipiti">Sessione C – Trazione
-(schiena, bicipiti)</a></li>
-<li><a
-href="#sessione-d-full-body-richiamo-glutei-spalle-posteriori-braccia"
-id="toc-sessione-d-full-body-richiamo-glutei-spalle-posteriori-braccia">Sessione
-D – Full body &amp; richiamo (glutei, spalle posteriori,
-braccia)</a></li>
-<li><a href="#indicazioni-sullaumento-del-carico"
-id="toc-indicazioni-sullaumento-del-carico">Indicazioni sull’aumento del
-carico</a></li>
-<li><a href="#alternative" id="toc-alternative">Alternative</a></li>
-</ul></li>
-<li><a href="#capitolo-5-scheda-casa"
-id="toc-capitolo-5-scheda-casa">Capitolo 5 – Scheda casa</a>
-<ul>
-<li><a href="#attrezzatura-disponibile"
-id="toc-attrezzatura-disponibile">Attrezzatura disponibile</a></li>
-<li><a href="#struttura-3-giorni" id="toc-struttura-3-giorni">Struttura
-(3 giorni)</a></li>
-<li><a href="#suggerimenti" id="toc-suggerimenti">Suggerimenti</a></li>
-</ul></li>
-<li><a href="#capitolo-6-protocollo-spalla"
-id="toc-capitolo-6-protocollo-spalla">Capitolo 6 – Protocollo spalla</a>
-<ul>
-<li><a href="#routine-da-5-minuti-preallenamento"
-id="toc-routine-da-5-minuti-preallenamento">Routine da 5 minuti
-(pre‑allenamento)</a></li>
-<li><a href="#routine-da-10-minuti-preallenamento"
-id="toc-routine-da-10-minuti-preallenamento">Routine da 10 minuti
-(pre‑allenamento)</a></li>
-<li><a href="#routine-da-20-minuti-giorni-off-riabilitazione"
-id="toc-routine-da-20-minuti-giorni-off-riabilitazione">Routine da 20
-minuti (giorni off / riabilitazione)</a></li>
-<li><a href="#routine-postallenamento-10-min"
-id="toc-routine-postallenamento-10-min">Routine post‑allenamento (10
-min)</a></li>
-<li><a href="#gestione-del-dolore" id="toc-gestione-del-dolore">Gestione
-del dolore</a></li>
-</ul></li>
-<li><a href="#capitolo-7-mobilità-quotidiana"
-id="toc-capitolo-7-mobilità-quotidiana">Capitolo 7 – Mobilità
-quotidiana</a></li>
-<li><a href="#capitolo-8-stretching"
-id="toc-capitolo-8-stretching">Capitolo 8 – Stretching</a></li>
-<li><a href="#capitolo-9-guida-alimentare"
-id="toc-capitolo-9-guida-alimentare">Capitolo 9 – Guida alimentare</a>
-<ul>
-<li><a href="#principi-generali-1" id="toc-principi-generali-1">Principi
-generali</a></li>
-<li><a href="#categorie-alimentari"
-id="toc-categorie-alimentari">Categorie alimentari</a></li>
-<li><a href="#consigli-pratici" id="toc-consigli-pratici">Consigli
-pratici</a></li>
-</ul></li>
-<li><a href="#capitolo-10-lista-della-spesa"
-id="toc-capitolo-10-lista-della-spesa">Capitolo 10 – Lista della
-spesa</a>
-<ul>
-<li><a href="#lidl-discount-prezzi-bassi"
-id="toc-lidl-discount-prezzi-bassi">Lidl (discount, prezzi
-bassi)</a></li>
-<li><a href="#famila-supermercato-locale"
-id="toc-famila-supermercato-locale">Famila (supermercato
-locale)</a></li>
-<li><a href="#carrefour-ampia-scelta"
-id="toc-carrefour-ampia-scelta">Carrefour (ampia scelta)</a></li>
-<li><a href="#eurospin-discount" id="toc-eurospin-discount">Eurospin
-(discount)</a></li>
-<li><a href="#esselunga-qualità-alta"
-id="toc-esselunga-qualità-alta">Esselunga (qualità alta)</a></li>
-</ul></li>
-<li><a href="#capitolo-11-ricette-semplici-15-min"
-id="toc-capitolo-11-ricette-semplici-15-min">Capitolo 11 – Ricette
-semplici (≤15 min)</a>
-<ul>
-<li><a href="#straccetti-di-pollo-con-verdure-croccanti"
-id="toc-straccetti-di-pollo-con-verdure-croccanti">1. Straccetti di
-pollo con verdure croccanti</a></li>
-<li><a href="#insalata-di-tonno-e-fagioli"
-id="toc-insalata-di-tonno-e-fagioli">2. Insalata di tonno e
-fagioli</a></li>
-<li><a href="#omelette-proteica-con-spinaci"
-id="toc-omelette-proteica-con-spinaci">3. Omelette proteica con
-spinaci</a></li>
-<li><a href="#bowl-di-yogurt-greco-e-avena"
-id="toc-bowl-di-yogurt-greco-e-avena">4. Bowl di yogurt greco e
-avena</a></li>
-<li><a href="#quinoa-con-ceci-e-spinaci"
-id="toc-quinoa-con-ceci-e-spinaci">5. Quinoa con ceci e spinaci</a></li>
-</ul></li>
-<li><a href="#capitolo-12-integratori"
-id="toc-capitolo-12-integratori">Capitolo 12 – Integratori</a>
-<ul>
-<li><a href="#proteine-in-polvere" id="toc-proteine-in-polvere">Proteine
-in polvere</a></li>
-<li><a href="#creatina-monoidrato" id="toc-creatina-monoidrato">Creatina
-monoidrato</a></li>
-<li><a href="#omega3-epadha" id="toc-omega3-epadha">Omega‑3
-(EPA/DHA)</a></li>
-<li><a href="#magnesio" id="toc-magnesio">Magnesio</a></li>
-<li><a href="#zinco" id="toc-zinco">Zinco</a></li>
-<li><a href="#vitamina-d" id="toc-vitamina-d">Vitamina D</a></li>
-<li><a href="#elettroliti-sodio-potassio-magnesio"
-id="toc-elettroliti-sodio-potassio-magnesio">Elettroliti (sodio,
-potassio, magnesio)</a></li>
-<li><a href="#caffeina" id="toc-caffeina">Caffeina</a></li>
-<li><a href="#citrullina-malato-e-beta-alanina"
-id="toc-citrullina-malato-e-beta-alanina">Citrullina malato e beta
-alanina</a></li>
-<li><a href="#mass-gainer" id="toc-mass-gainer">Mass gainer</a></li>
-</ul></li>
-<li><a href="#capitolo-13-tracker-tabelle-compilabili"
-id="toc-capitolo-13-tracker-tabelle-compilabili">Capitolo 13 – Tracker
-(tabelle compilabili)</a>
-<ul>
-<li><a href="#tabella-peso-e-bia" id="toc-tabella-peso-e-bia">Tabella
-peso e BIA</a></li>
-<li><a href="#tabella-circonferenze-cm"
-id="toc-tabella-circonferenze-cm">Tabella circonferenze (cm)</a></li>
-<li><a href="#tabella-carichi-esempio-panca-piana"
-id="toc-tabella-carichi-esempio-panca-piana">Tabella carichi (esempio
-panca piana)</a></li>
-<li><a href="#tabella-dolore-e-sintomi"
-id="toc-tabella-dolore-e-sintomi">Tabella dolore e sintomi</a></li>
-<li><a href="#tabella-sonno-ed-energia"
-id="toc-tabella-sonno-ed-energia">Tabella sonno ed energia</a></li>
-<li><a href="#tabella-integrazione"
-id="toc-tabella-integrazione">Tabella integrazione</a></li>
-</ul></li>
-<li><a href="#capitolo-14-progressione-e-adattamenti"
-id="toc-capitolo-14-progressione-e-adattamenti">Capitolo 14 –
-Progressione e adattamenti</a>
-<ul>
-<li><a href="#quando-aumentare-i-carichi"
-id="toc-quando-aumentare-i-carichi">Quando aumentare i carichi</a></li>
-<li><a href="#quando-cambiare-esercizio"
-id="toc-quando-cambiare-esercizio">Quando cambiare esercizio</a></li>
-<li><a href="#quando-fare-scarico" id="toc-quando-fare-scarico">Quando
-fare scarico</a></li>
-<li><a href="#quando-modificare-la-scheda"
-id="toc-quando-modificare-la-scheda">Quando modificare la
-scheda</a></li>
-</ul></li>
-<li><a href="#capitolo-15-faq" id="toc-capitolo-15-faq">Capitolo 15 –
-FAQ</a></li>
-<li><a href="#controllo-qualità" id="toc-controllo-qualità">Controllo
-qualità</a></li>
-<li><a href="#fonti-scientifiche-principali"
-id="toc-fonti-scientifiche-principali">Fonti scientifiche
-principali</a></li>
-</ul></li>
-</ul>
-</nav>
-<h1
+<div class="app" id="app">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <div class="brand"><div class="logo">V</div><div><div class="brand-title">Manuale Vincenzo</div><div class="brand-sub">Allenamento · Spalla · Nutrizione</div></div></div>
+      <div class="search-wrap"><input id="search" placeholder="Cerca nel manuale..." autocomplete="off"><span class="search-kbd">/</span></div>
+      <button class="icon-btn" id="themeBtn" aria-label="Tema">◐</button>
+    </div>
+  </header>
+  <main class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h3>Navigazione</h3>
+      <nav class="toc" id="toc"></nav>
+      <div class="side-actions">
+        <button class="icon-btn" onclick="window.print()">Stampa / PDF</button>
+        <button class="icon-btn" onclick="scrollToTop()">Torna su</button>
+      </div>
+    </aside>
+    <section class="content">
+      <div class="hero">
+        <span class="badge">Versione Web App · GitHub Pages Ready</span>
+        <h1>Manuale Professionale di Allenamento e Riabilitazione</h1>
+        <p>Percorso operativo per aumentare massa, volume ed estetica mantenendo stabile la spalla destra. Struttura annuale, schede, protocollo spalla, alimentazione, integrazione e tracker.</p>
+        <div class="hero-grid">
+          <div class="metric"><b>15</b><span>Capitoli</span></div>
+          <div class="metric"><b>4</b><span>Macro-cicli annuali</span></div>
+          <div class="metric"><b>4+3</b><span>Schede palestra/casa</span></div>
+          <div class="metric"><b>5-20'</b><span>Routine spalla</span></div>
+        </div>
+      </div>
+      <div class="quick">
+        <div class="card"><h3>Priorità</h3><p>Ipertrofia progressiva senza irritare cuffia e scapola.</p></div>
+        <div class="card"><h3>Regola dolore</h3><p>Dolore >3/10: riduci carico, ROM o sostituisci esercizio.</p></div>
+        <div class="card"><h3>Progressione</h3><p>Aumenta solo quando completi il range con RPE controllato.</p></div>
+      </div>
+      <div class="tracker-panel" id="tracker">
+        <h2 style="margin-top:0;border-top:0;padding-top:0">Tracker rapido</h2>
+        <p>Questi dati restano salvati nel browser del dispositivo.</p>
+        <div class="tracker-controls">
+          <button class="icon-btn" data-tracker="peso">Peso</button>
+          <button class="icon-btn" data-tracker="dolore">Dolore spalla</button>
+          <button class="icon-btn" data-tracker="carichi">Carichi</button>
+          <button class="icon-btn" onclick="exportTracker()">Esporta CSV</button>
+          <button class="icon-btn" onclick="clearTracker()">Reset</button>
+        </div>
+        <div id="trackerBox"></div>
+      </div>
+      <div class="exercise-grid">
+        <div class="exercise"><b>Scapular Wall Slide</b><small>Pre-allenamento · <span class="risk-low">rischio basso</span></small></div>
+        <div class="exercise"><b>Panca manubri presa neutra</b><small>Spinta · <span class="risk-mid">rischio medio</span></small></div>
+        <div class="exercise"><b>Face Pull</b><small>Cuffia/scapola · <span class="risk-low">rischio basso</span></small></div>
+      </div>
+      <div class="no-results" id="noResults">Nessun risultato trovato. Prova con “spalla”, “panca”, “creatina”, “tracker”.</div>
+      <article id="manual-content">
+      <h1
 id="manuale-professionale-di-allenamento-e-riabilitazione-per-vincenzo">Manuale
 Professionale di Allenamento e Riabilitazione per Vincenzo</h1>
 <p><strong>Versione compatibile Android / GitHub Pages.</strong> File
@@ -2349,5 +2245,37 @@ persistente alla spalla, riduzione della forza, formicolio o perdita di
 mobilità, sospendere gli esercizi aggravanti e rivolgersi a
 medico/fisioterapista.</p>
 </blockquote>
+
+      </article>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast">Salvato</div>
+<script>
+const qs=(s,el=document)=>el.querySelector(s); const qsa=(s,el=document)=>[...el.querySelectorAll(s)];
+function slugify(t){return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')}
+function initIds(){ qsa('#manual-content h2,#manual-content h3').forEach(h=>{ if(!h.id) h.id=slugify(h.textContent); }); }
+function buildToc(){ const toc=qs('#toc'); toc.innerHTML=''; qsa('#manual-content h2,#manual-content h3').forEach(h=>{ const a=document.createElement('a'); a.href='#'+h.id; a.textContent=h.textContent; a.className=h.tagName.toLowerCase(); a.onclick=()=>qs('#sidebar').classList.remove('open'); toc.appendChild(a); }); }
+function setTheme(t){ document.documentElement.setAttribute('data-theme',t); localStorage.setItem('mv-theme',t); }
+function toggleTheme(){ setTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'); }
+function showToast(txt='Salvato'){ const t=qs('#toast'); t.textContent=txt; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1200); }
+function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
+function searchManual(){ const term=qs('#search').value.trim().toLowerCase(); const article=qs('#manual-content'); qsa('h2,h3,p,li,table',article).forEach(el=>el.style.display=''); if(!term){ qs('#noResults').style.display='none'; return; } let hits=0; const blocks=qsa('#manual-content h2,#manual-content h3,#manual-content p,#manual-content li,#manual-content table'); blocks.forEach(el=>{ const txt=el.textContent.toLowerCase(); if(txt.includes(term)){ el.style.display=''; hits++; } else if(!['H2','H3'].includes(el.tagName)){ el.style.display='none'; } }); qs('#noResults').style.display=hits?'none':'block'; }
+const trackerDefs={
+  peso:['Data','Peso kg','Sonno h','Energia 1-5','Note'],
+  dolore:['Data','Dolore 0-10','Esercizio trigger','Azione','Note'],
+  carichi:['Data','Esercizio','Serie x rep','Kg','RPE']
+};
+let currentTracker='peso';
+function loadTracker(name=currentTracker){ currentTracker=name; const headers=trackerDefs[name]; const data=JSON.parse(localStorage.getItem('mv-tracker-'+name)||'[]'); let html='<table class="tracker-table"><thead><tr>'+headers.map(h=>`<th>${h}</th>`).join('')+'</tr></thead><tbody>'; data.concat([Object.fromEntries(headers.map(h=>[h,'']))]).forEach((row,i)=>{ html+='<tr>'+headers.map(h=>`<td><input data-i="${i}" data-h="${h}" value="${(row[h]||'').replaceAll('"','&quot;')}"></td>`).join('')+'</tr>'; }); html+='</tbody></table><button class="icon-btn" onclick="saveTracker()">Salva tracker</button>'; qs('#trackerBox').innerHTML=html; }
+function saveTracker(){ const headers=trackerDefs[currentTracker]; const rows=[]; qsa('#trackerBox tbody tr').forEach(tr=>{ const obj={}; let has=false; qsa('input',tr).forEach(inp=>{ obj[inp.dataset.h]=inp.value; if(inp.value.trim()) has=true; }); if(has) rows.push(obj); }); localStorage.setItem('mv-tracker-'+currentTracker, JSON.stringify(rows)); loadTracker(currentTracker); showToast(); }
+function clearTracker(){ if(confirm('Cancellare i dati tracker salvati su questo browser?')){ Object.keys(trackerDefs).forEach(k=>localStorage.removeItem('mv-tracker-'+k)); loadTracker(currentTracker); showToast('Cancellato'); } }
+function exportTracker(){ saveTracker(); const headers=trackerDefs[currentTracker]; const rows=JSON.parse(localStorage.getItem('mv-tracker-'+currentTracker)||'[]'); const csv=[headers.join(';')].concat(rows.map(r=>headers.map(h=>'"'+String(r[h]||'').replaceAll('"','""')+'"').join(';'))).join('
+'); const blob=new Blob([csv],{type:'text/csv'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='tracker-'+currentTracker+'.csv'; a.click(); }
+function activeToc(){ const heads=qsa('#manual-content h2,#manual-content h3'); let current=''; heads.forEach(h=>{ if(h.getBoundingClientRect().top < 120) current=h.id; }); qsa('#toc a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current)); }
+document.addEventListener('keydown',e=>{ if(e.key==='/' && document.activeElement.tagName!=='INPUT'){ e.preventDefault(); qs('#search').focus(); } });
+qs('#menuBtn').onclick=()=>qs('#sidebar').classList.toggle('open'); qs('#themeBtn').onclick=toggleTheme; qs('#search').addEventListener('input',searchManual); qsa('[data-tracker]').forEach(b=>b.onclick=()=>loadTracker(b.dataset.tracker)); window.addEventListener('scroll',activeToc);
+setTheme(localStorage.getItem('mv-theme')||'light'); initIds(); buildToc(); loadTracker('peso'); activeToc();
+</script>
 </body>
 </html>
